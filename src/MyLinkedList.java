@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.StringJoiner;
 
 public class MyLinkedList<E> {
@@ -10,6 +11,11 @@ public class MyLinkedList<E> {
         this.firstNode = new Node(null, null, lastNode);
         lastNode.setPrevElement(firstNode);
         this.size = 0;
+    }
+
+    public boolean add(E e){
+        addLast(e);
+        return true;
     }
 
     public void addLast(E e){

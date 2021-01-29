@@ -114,6 +114,9 @@ class MainMyArrayListTester {
         System.out.println(ints);
         System.out.println("----------");
 
+        Integer third = ints.get(2);
+        System.out.println("Getting element with index 2: " + ints.get(2));
+
 
 
 
