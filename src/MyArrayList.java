@@ -6,7 +6,6 @@ public class MyArrayList<E> {
     private int size;
 
 
-
     public MyArrayList() {
         this.elementData = (E[]) new Object[DEFAULT_CAPACITY];
         this.size = 0;
@@ -67,7 +66,8 @@ public class MyArrayList<E> {
 
 class MainMyArrayListTester {
     public static void main(String[] args) {
-        MyArrayList list = new MyArrayList();
+
+        MyArrayList<String> list = new MyArrayList<>();
         list.add("Petro");
         list.add("Alex");
         list.add("Olga");
@@ -85,12 +85,12 @@ class MainMyArrayListTester {
 
         System.out.println("Getting element with index = 1");
         System.out.println("element 1 = " + list.get(1));
-        Object element1 = list.get(1);
+        String element1 = list.get(1);
         System.out.println(list);
         System.out.println("----------");
 
         System.out.println("Removing element with index = 1");
-        Object element = list.remove(1);
+        String element = list.remove(1);
         System.out.println(element);
         System.out.println(list);
         System.out.println("----------");
@@ -103,6 +103,16 @@ class MainMyArrayListTester {
         list.clear();
         System.out.println("size = " + list.size());
         System.out.println(list);
+
+        System.out.println("----------");
+        MyArrayList<Integer> ints = new MyArrayList<>();
+        ints.add(2);
+        ints.add(7);
+        ints.add(5);
+        ints.add(8);
+
+        System.out.println(ints);
+        System.out.println("----------");
 
 
 
