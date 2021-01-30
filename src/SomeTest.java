@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class SomeTest {
     public static void main(String[] args) {
@@ -9,6 +10,8 @@ public class SomeTest {
         list.add("a");
         list.add("b");
         System.out.println("list = " + list);
+
+
     }
 
 }

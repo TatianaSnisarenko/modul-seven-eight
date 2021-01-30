@@ -14,6 +14,8 @@ public class MyQueue<E> {
     }
 
     public boolean add(E element){
+        if (element == null)
+            throw new NullPointerException();
         if(size == data.length){
             resize();
         }
@@ -60,7 +62,7 @@ public class MyQueue<E> {
 
    @Override
     public String toString(){
-       return "MyArrayList{" +
+       return "MyQueue{" +
                "data=" + Arrays.toString(data) +
                ", size=" + size +
                '}';
@@ -80,7 +82,7 @@ class MyQueueTester{
         String first = strings.peek();
         System.out.println("Using peek - should get first: " + first);
         System.out.println(strings);
-        System.out.println("Using pool - should get and remove first: " + strings.poll());
+        System.out.println("Using poll - should get and remove first: " + strings.poll());
         System.out.println(strings);
         for (int i = 0; i < 10; i++) {
             strings.add("abc");
@@ -89,5 +91,10 @@ class MyQueueTester{
         System.out.println("Getting size: " + strings.size());
         System.out.println("Testing removing by index 3 - should remove fifth: " + strings.remove(3));
         System.out.println(strings);
+        System.out.println("Testing clearing");
+        strings.clear();
+        System.out.println(strings);
     }
 }
+
+
