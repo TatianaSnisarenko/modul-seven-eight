@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 import java.util.StringJoiner;
 
 public class MyLinkedList<E> {
@@ -34,7 +33,7 @@ public class MyLinkedList<E> {
         size++;
     }
 
-    public int getSize() {
+    public int size() {
         return size;
     }
 
@@ -50,6 +49,7 @@ public class MyLinkedList<E> {
     }
 
     private Node<E> getNextElement(Node<E> current){
+
         return current.getNextElement();
     }
 
@@ -139,10 +139,10 @@ public class MyLinkedList<E> {
 class MainMyLinkedListTester{
     public static void main(String[] args) {
         MyLinkedList<String> list = new MyLinkedList<>();
-        System.out.println("Size of a new created list = " + list.getSize());
+        System.out.println("Size of a new created list = " + list.size());
         list.addLast("Tanya");
         list.addLast("Alex");
-        System.out.println("New size should e 2 = " + list.getSize());
+        System.out.println("New size should e 2 = " + list.size());
         System.out.println(list);
         list.addFirst("FirstOne");
         list.addFirst("SecondOne");
