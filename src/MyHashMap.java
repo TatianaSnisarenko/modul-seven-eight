@@ -213,11 +213,11 @@ public class MyHashMap<K, V> {
     @Override
     public String toString() {
         String begining = "MyHashMap{" +
-                "size=" + size + ", nodes: ";
-        StringJoiner joiner = new StringJoiner(", ", begining, "}");
+                "size=" + size + ", nodes: [";
+        StringJoiner joiner = new StringJoiner(", ", begining, "]}");
         for (Node<K, V> node : table) {
             if (node == null) {
-                joiner.add("null");
+                //joiner.add("null");
             } else {
                 joiner.add(node.toString());
                 while (node.getNext() != null) {

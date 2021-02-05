@@ -63,7 +63,7 @@ public class MyQueue<E> {
    @Override
     public String toString(){
        return "MyQueue{" +
-               "data=" + Arrays.toString(data) +
+               "data=" + Arrays.toString(Arrays.copyOf(data, size)) +
                ", size=" + size +
                '}';
    }

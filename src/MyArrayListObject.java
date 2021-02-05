@@ -1,18 +1,21 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
-public class MyArrayList<E> {
+public class MyArrayListObject {
+
     private static final int DEFAULT_CAPACITY = 10;
-    private  E [] elementData;
+    private Object[] elementData;
     private int size;
 
 
-    public MyArrayList() {
-        this.elementData = (E[]) new Object[DEFAULT_CAPACITY];
+    public MyArrayListObject() {
+        this.elementData = new Object[DEFAULT_CAPACITY];
         this.size = 0;
     }
 
-    public boolean add(E value){
-        if(size == elementData.length){
+    public boolean add(Object value) {
+        if (size == elementData.length) {
             resize();
         }
         elementData[size] = value;
@@ -20,13 +23,13 @@ public class MyArrayList<E> {
         return true;
     }
 
-    private void resize(){
-        elementData = (E[]) Arrays.copyOf(elementData, (size * 3 / 2 + 1));
+    private void resize() {
+        elementData = Arrays.copyOf(elementData, (size * 3 / 2 + 1));
     }
 
-    public E remove(int index){
+    public Object remove(int index) {
         Objects.checkIndex(index, size);
-        E element = get(index);
+        Object element = get(index);
         elementData[index] = null;
 
         for (int i = index; i < size; i++) {
@@ -39,17 +42,18 @@ public class MyArrayList<E> {
 
     }
 
-    public void clear(){
+    public void clear() {
         for (int i = 0; i < size; i++) {
             elementData[i] = null;
         }
         size = 0;
     }
-    public int size(){
+
+    public int size() {
         return size;
     }
 
-    public E get(int index){
+    public Object get(int index) {
         Objects.checkIndex(index, size);
         return elementData[index];
     }
@@ -64,15 +68,13 @@ public class MyArrayList<E> {
 
 }
 
-class MainMyArrayListTester {
+class MainMyArrayListObjectTester {
     public static void main(String[] args) {
-        MyArrayList<String> myArrayList = new MyArrayList<>();
-        System.out.println(myArrayList);
-        ArrayList<String> arrayList = new ArrayList<>(16);
-        System.out.println(arrayList);
+        MyArrayListObject listObject = new MyArrayListObject();
+        System.out.println(listObject);
 
 
-        MyArrayList<String> list = new MyArrayList<>();
+        /*MyArrayList<String> list = new MyArrayList<>();
         list.add("Petro");
         list.add("Alex");
         list.add("Olga");
@@ -120,7 +122,10 @@ class MainMyArrayListTester {
         System.out.println("----------");
 
         Integer third = ints.get(2);
-        System.out.println("Getting element with index 2: " + ints.get(2));
+        System.out.println("Getting element with index 2: " + ints.get(2));*/
+
 
     }
 }
+
+

@@ -70,7 +70,7 @@ public class MyStack<E> {
     @Override
     public String toString() {
         return "MyArrayList{" +
-                "elementData=" + Arrays.toString(elementData) +
+                "elementData=" + Arrays.toString(Arrays.copyOf(elementData, size)) +
                 ", size=" + size +
                 '}';
     }
